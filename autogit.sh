@@ -1,7 +1,5 @@
 git init
 git add -A
-git commit -m "Project started"
-git branch -M master
-git remote add origin https://github.com/CarlosViniMSouza/FastAPI_Web_APIs.git
+git commit -m "main.py -> alts add | README.md -> updated"
 git push -u origin master
 git status
