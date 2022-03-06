@@ -1,4 +1,14 @@
 from fastapi import FastAPI
+from typing import Optional
+from pydantic import BaseModel
+
+
+class Book(BaseModel):
+    id: int
+    title: str
+    description: Optional[str] = None
+    price: float
+
 
 app = FastAPI()
 
@@ -8,9 +18,10 @@ async def hello():
     return {"msg": "Welcome to FastAPI Framework"}
 
 
-@app.get("/book/id_book")
-async def checking_book(id_book: int):
-    return {"msg": f"The book founding is {id_book}"}
+@app.post("/books/")
+async def create_book(book: Book):
+    return book
+
 
 """
 See the documentation in:
