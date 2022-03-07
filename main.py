@@ -10,6 +10,13 @@ class Book(BaseModel):
     price: float
 
 
+chars_book = [
+    {"min_pages": 20},
+    {"max_pages": 1500},
+    {"original": True}
+]
+
+
 app = FastAPI()
 
 
@@ -18,7 +25,12 @@ async def hello():
     return {"msg": "Welcome to FastAPI Framework"}
 
 
-@app.post("/books/")
+@app.post("/books/control/")
+async def read_book(limit: Optional[int]):
+    return chars_book
+
+
+@app.post("/books/create/")
 async def create_book(book: Book):
     return book
 
