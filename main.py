@@ -1,40 +1,3 @@
-from fastapi import FastAPI
-from typing import Optional
-from pydantic import BaseModel
-
-
-class Book(BaseModel):
-    id: int
-    title: str
-    description: Optional[str] = None
-    price: float
-
-
-chars_book = [
-    {"min_pages": 20},
-    {"max_pages": 1500},
-    {"original": True}
-]
-
-
-app = FastAPI()
-
-
-@app.get("/")
-async def hello():
-    return {"msg": "Welcome to FastAPI Framework"}
-
-
-@app.post("/books/control/")
-async def read_book(limit: Optional[int]):
-    return chars_book
-
-
-@app.post("/books/create/")
-async def create_book(book: Book):
-    return book
-
-
 """
 See the documentation in:
 
@@ -42,3 +5,22 @@ See the documentation in:
 
 2. http://127.0.0.1:8000/redoc
 """
+
+from methods import method_get, method_post
+import uvicorn as uvi
+
+
+method_http_get = method_get.methodGet
+method_http_post = method_post.methodPost
+
+
+async def methodGet(method_http_get):
+    return method_http_get
+
+
+async def methodPost(method_http_post):
+    return method_http_post
+
+
+if __name__ == "__main__":
+    uvi.run(host="127.0.0.1", port=7070)

@@ -1,8 +1,12 @@
-## Building APIs using FastAPI
-
-### Link for article: https://realpython.com/fastapi-python-web-apis/
+![logo-realpython]
 
 ![img-article](https://files.realpython.com/media/Build-a-Project-With-FastAPI_Watermarked.cb19f6b7b108.jpg)
+
+## Building APIs using FastAPI
+
+### by [Sebatián Ramírez](https://github.com/tiangolo)
+
+### Link for article: https://realpython.com/fastapi-python-web-apis/
 
 ```
 Summary:
